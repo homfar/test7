@@ -35,7 +35,8 @@ header{
 }
 
 .logo{
-  font-family: "A Sahand";
+  font-family: "Sahel";
+  font-type: bold;
   color: #fff;
   margin-left: 2%;
   font-size: 100%;
@@ -43,10 +44,11 @@ header{
 
 .s1{
   font-family: "Sahel";
+  
   font-size: 35%;
 }
  #headerTitle{
-   font-family: "A Sahand";
+   font-family: "Sahel";
    display: block;
    color: #0066ff;
    text-align: center;
