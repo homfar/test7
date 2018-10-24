@@ -10,12 +10,12 @@
 }
 
 @font-face {
-  font-family: 'Far_Domrol';
+  font-family: 'A-Sahand';
   src:
-        url('Far_Domrol.eot?') format('embedded-opentype'),
-        url('Far_Domrol.woff') format('woff'),
-        url('Far_Domrol.woff2') format('woff2'),
-        url('Far_Domrol.ttf') format('truetype');
+        url('A-Sahand.eot?') format('embedded-opentype'),
+        url('A-Sahand.woff') format('woff'),
+        url('A-Sahand.woff2') format('woff2'),
+        url('A-Sahand.ttf') format('truetype');
 }
 
 body{
@@ -35,7 +35,7 @@ header{
 }
 
 .logo{
-  font-family: "Far.Domrol";
+  font-family: "A Sahand";
   color: #fff;
   margin-left: 2%;
   font-size: 100%;
@@ -46,7 +46,7 @@ header{
   font-size: 35%;
 }
  #headerTitle{
-   font-family: "Far.Domrol";
+   font-family: "A Sahand";
    display: block;
    color: #0066ff;
    text-align: center;
