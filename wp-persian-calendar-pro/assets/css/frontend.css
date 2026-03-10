@@ -1,0 +1,13 @@
+.wpcp-calendar{background:var(--wpcp-bg);color:var(--wpcp-text);border:1px solid var(--wpcp-border);border-radius:var(--wpcp-radius);padding:14px;box-shadow:0 10px calc(var(--wpcp-shadow) * 1px) rgba(0,0,0,.08)}
+.wpcp-calendar.is-dark{--wpcp-bg:#121212;--wpcp-surface:#1f1f1f;--wpcp-text:#f3f3f3;--wpcp-border:#333}
+.wpcp-header,.wpcp-nav{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:10px}
+.wpcp-today-btn,.wpcp-nav button{background:var(--wpcp-primary);color:var(--wpcp-btn-text);border:0;padding:6px 10px;border-radius:10px;cursor:pointer}
+.wpcp-weekdays,.wpcp-grid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:8px}
+.wpcp-weekdays span{text-align:center;font-size:12px;opacity:.8}
+.wpcp-day{background:var(--wpcp-surface);min-height:72px;border:1px solid var(--wpcp-border);border-radius:10px;padding:6px;position:relative}
+.wpcp-day.today{background:var(--wpcp-today)}
+.wpcp-day ul{padding:0;margin:4px 0 0;list-style:none;font-size:11px;line-height:1.5}
+.wpcp-day.empty{opacity:.2}
+.wpcp-dot{width:8px;height:8px;background:var(--wpcp-holiday);border-radius:50%;display:inline-block;position:absolute;top:8px;left:8px}
+.wpcp-footer{margin-top:10px;font-size:12px;display:grid;gap:6px}
+@media(max-width:640px){.wpcp-day{min-height:60px;font-size:12px}}

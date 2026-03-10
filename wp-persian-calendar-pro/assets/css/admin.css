@@ -1,0 +1,8 @@
+.wpcp-admin-wrap .wpcp-tabs{display:flex;gap:8px;margin:16px 0}
+.wpcp-tab{background:#fff;border:1px solid #ccd0d4;padding:8px 12px;cursor:pointer}
+.wpcp-tab.active{background:#2271b1;color:#fff}
+.wpcp-panel{display:none;background:#fff;border:1px solid #dcdcde;padding:16px;gap:10px;flex-direction:column}
+.wpcp-panel.active{display:flex}
+.wpcp-color-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
+.wpcp-event-item{display:grid;grid-template-columns:24px 1fr 2fr 1fr auto;gap:8px;align-items:center;background:#f6f7f7;padding:8px;border-radius:8px;margin-bottom:8px}
+.wpcp-event-item .dashicons-menu{cursor:grab}
