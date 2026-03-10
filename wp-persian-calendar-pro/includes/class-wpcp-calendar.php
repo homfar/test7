@@ -45,7 +45,7 @@ class WPCP_Calendar
         ?>
         <div class="wpcp-calendar theme-<?php echo esc_attr($settings['theme']); ?> <?php echo $settings['dark_mode'] ? 'is-dark' : ''; ?>" style="--wpcp-primary:<?php echo esc_attr($settings['colors']['primary']); ?>;--wpcp-btn-text:<?php echo esc_attr($settings['colors']['button_text']); ?>;--wpcp-bg:<?php echo esc_attr($settings['colors']['background']); ?>;--wpcp-surface:<?php echo esc_attr($settings['colors']['surface']); ?>;--wpcp-text:<?php echo esc_attr($settings['colors']['text']); ?>;--wpcp-border:<?php echo esc_attr($settings['colors']['border']); ?>;--wpcp-today:<?php echo esc_attr($settings['colors']['today']); ?>;--wpcp-holiday:<?php echo esc_attr($settings['colors']['holiday']); ?>;--wpcp-radius:<?php echo (int) $settings['radius']; ?>px;--wpcp-shadow:<?php echo (int) $settings['shadow']; ?>;max-width:<?php echo esc_attr($settings['widget_width']); ?>;font-family:<?php echo esc_attr($settings['font_family']); ?>;">
             <div class="wpcp-header">
-                <h3>PersianCalendar</h3>
+                <div class="wpcp-title-wrap"><h3><?php echo esc_html($settings['title']); ?></h3><small><?php echo esc_html($settings['subtitle']); ?></small></div>
                 <?php if (!empty($settings['show_today_button'])): ?><button class="wpcp-today-btn">امروز</button><?php endif; ?>
             </div>
             <div class="wpcp-nav">
@@ -57,10 +57,10 @@ class WPCP_Calendar
                 <button class="wpcp-next">▶</button>
             </div>
             <div class="wpcp-weekdays"></div>
-            <div class="wpcp-grid" data-events='<?php echo esc_attr(wp_json_encode($events)); ?>' data-occasions='<?php echo esc_attr(wp_json_encode($occasions)); ?>'></div>
+            <div class="wpcp-grid" data-events='<?php echo esc_attr(wp_json_encode($events)); ?>' data-occasions='<?php echo esc_attr(wp_json_encode($occasions)); ?>' data-show-week-number="<?php echo esc_attr((int) $settings['show_week_number']); ?>" data-week-start="<?php echo esc_attr($settings['week_start']); ?>"></div>
             <div class="wpcp-footer">
                 <div class="wpcp-pray-times" data-city="<?php echo esc_attr($settings['city']); ?>">درحال بارگذاری اوقات شرعی...</div>
-                <?php if (!empty($settings['show_gregorian'])): ?><small class="wpcp-gregorian-date"></small><?php endif; ?>
+                <?php if (!empty($settings['show_gregorian'])): ?><small class="wpcp-gregorian-date"></small><?php endif; ?><small class="wpcp-hijri-date"></small><small class="wpcp-week-number"></small>
             </div>
             <style><?php echo wp_strip_all_tags($settings['custom_css']); ?></style>
         </div>
@@ -115,8 +115,11 @@ class WPCP_Calendar
     {
         return [
             ['date' => '2026-03-21', 'title' => 'نوروز', 'type' => 'iran'],
+            ['date' => '2026-03-20', 'title' => 'چهارشنبه‌سوری', 'type' => 'iran'],
             ['date' => '2026-02-11', 'title' => 'پیروزی انقلاب اسلامی', 'type' => 'iran'],
+            ['date' => '2026-04-01', 'title' => 'روز جمهوری اسلامی', 'type' => 'iran'],
             ['date' => '2026-01-01', 'title' => 'سال نو میلادی', 'type' => 'global'],
+            ['date' => '2026-03-08', 'title' => 'روز جهانی زن', 'type' => 'global'],
             ['date' => '2026-05-01', 'title' => 'روز جهانی کارگر', 'type' => 'global'],
             ['date' => '2026-06-17', 'title' => 'عید قربان (قمری)', 'type' => 'hijri'],
         ];

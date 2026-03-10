@@ -19,6 +19,8 @@ class WPCP_Settings
     public static function default_settings()
     {
         return [
+            'title' => 'PersianCalendar',
+            'subtitle' => 'تقویم حرفه‌ای فارسی',
             'theme' => 'material',
             'dark_mode' => 0,
             'show_gregorian' => 1,
@@ -93,6 +95,8 @@ class WPCP_Settings
         }
         $out = wp_parse_args((array) $input, $defaults);
 
+        $out['title'] = sanitize_text_field($out['title']);
+        $out['subtitle'] = sanitize_text_field($out['subtitle']);
         $out['theme'] = sanitize_text_field($out['theme']);
         $out['dark_mode'] = !empty($out['dark_mode']) ? 1 : 0;
         $out['show_gregorian'] = !empty($out['show_gregorian']) ? 1 : 0;
@@ -152,6 +156,12 @@ class WPCP_Settings
                 </div>
 
                 <div class="wpcp-panel active" data-panel="general">
+                    <label>عنوان
+                        <input type="text" name="wpcp_settings[title]" value="<?php echo esc_attr($settings['title']); ?>">
+                    </label>
+                    <label>زیرعنوان
+                        <input type="text" name="wpcp_settings[subtitle]" value="<?php echo esc_attr($settings['subtitle']); ?>">
+                    </label>
                     <label><input type="checkbox" name="wpcp_settings[show_gregorian]" value="1" <?php checked($settings['show_gregorian'], 1); ?>> نمایش تاریخ میلادی</label><br>
                     <label><input type="checkbox" name="wpcp_settings[show_week_number]" value="1" <?php checked($settings['show_week_number'], 1); ?>> نمایش شماره هفته</label><br>
                     <label><input type="checkbox" name="wpcp_settings[show_today_button]" value="1" <?php checked($settings['show_today_button'], 1); ?>> دکمه امروز</label><br>
